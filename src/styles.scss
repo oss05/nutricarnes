@@ -1,1 +1,139 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1,
+h2,
+p {
+  color: #707070;
+}
+
+a {
+  color: #525252;
+}
+
+// -------main ----- 
+
+
+.tips {
+  border: solid 4px #707070;
+}
+
+.tips p,
+.address p,
+.quality p {
+  margin: 0;
+}
+
+.address {
+  border-left: solid 4px #FC0100;
+}
+
+.offers {
+  background: #DCDCDC;
+  padding: 12px 0;
+}
+
+.offers p {
+  color: #525252;
+  font-size: 25px;
+}
+
+.offers iframe {
+  width: 100%;
+  height: 200px;
+}
+
+.quality {
+  background: #640000;
+}
+
+.quality p {
+  color: #fff;
+  border-bottom: 3px solid #fff;
+  padding-bottom: 6px;
+}
+
+// ----- desktop ---- 
+
+@media only screen and (min-width: 600px) {
+  .desktopNav {
+    width: 100%;
+    background-color: #53535380;
+    height: 70px;
+    // border: solid 1px blue;
+  }
+
+  .desktopNav>div li {
+    height: 70px;
+    padding: 0;
+  }
+
+  .desktopNav>div li a {
+    height: 70px;
+    padding: 0 3em;
+    color: #fff;
+  }
+
+  .selected-area, .desktopNav>div li a:hover{
+    background-color: #fff;
+    color: #000 !important;
+  }
+
+  .fixed-app-container {
+    width: 20%;
+    position: fixed;
+    right: 0;
+    top: 0;
+  }
+
+  .offers {
+    height: 45vh;
+  }
+
+  .offers>iframe {
+    height: 50% !important;
+  }
+
+  .quality {
+    height: 45vh;
+    font-size: 2.5em;
+  }
+
+  .quality>p {
+    border-bottom: none !important;
+  }
+
+  .quality>hr {
+    width: 100px;
+    height: 8px;
+    border: none;
+    background-color: #fff;
+    margin: 10px 0;
+  }
+
+  footer {
+    width: 100%;
+    height: 10vh;
+    position: absolute;
+    bottom: 0;
+  }
+
+  footer>section article img {
+    width: 40px !important;
+  }
+
+  footer>section article p {
+    font-size: 20px;
+  }
+
+
+  // ----home --- 
+  .homeSection {
+    width: 131%;
+    // border: solid 1px red;
+  }
+}

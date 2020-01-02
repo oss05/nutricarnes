@@ -1,0 +1,89 @@
+.carouselImg {
+  height: 350px;
+  object-fit: cover;
+}
+
+// ---- Desktop Carousel --- 
+$unit: 400px;
+
+#carousel {
+  width: $unit;
+}
+
+#container {
+   border: 1px solid #000;
+  border-radius: 2px;
+  box-shadow: 3px 3px 5px #888;
+  overflow: hidden;
+  width: $unit;
+  
+  img {
+    vertical-align: middle;
+    width: $unit;
+  }
+}
+#inner {
+  transition: all 1s;
+  width: $unit * 6;
+}
+
+#one:target ~ #container #inner {
+  margin-left: -0 * $unit;
+}
+
+#two:target ~ #container #inner {
+  margin-left: -1 * $unit;
+}
+
+#three:target ~ #container #inner {
+  margin-left: -2 * $unit;
+}
+
+#four:target ~ #container #inner {
+  margin-left: -3 * $unit;
+}
+
+#five:target ~ #container #inner {
+  margin-left: -4 * $unit;
+}
+
+#six:target ~ #container #inner {
+  margin-left: -5 * $unit;
+}
+
+#index {
+  list-style: none;
+  margin: 5px 0 0;
+  padding: 0;
+  text-align: center;
+  
+  li {
+    display: inline-block;
+  }
+  a {
+    border: 1px solid transparent;
+    border-radius: 3px;
+    color: #000;
+    cursor: default;
+    display: inline-block;
+    font-size: 16px;
+    padding: 1px 9px;
+    text-decoration: none;
+    
+    &:hover {
+      background-color: #DDD;
+      border-color: #CCC;
+      box-shadow: 0 2px 2px -2px #BBB,
+        inset 0 2px 2px -2px #FFF;
+    }
+    &:active {
+      background-color: #D0D0D0;
+      border-color: #C0C0C0;
+      box-shadow: inset 0 2px 2px -2px #B0B0B0;
+    }
+  }
+  img {
+    width: 40px;
+    border-radius: 6px;
+  }
+}
