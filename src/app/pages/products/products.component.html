@@ -1,44 +1,68 @@
-<section class="mt-4 px-2">
-  <carousel [noPause]="false">
-    <slide>
-      <img src="../../../assets/img/resMobile.png" alt="res slide" style="display: block; width: 100%;"
-        class="carouselImg">
-      <div class="carousel-caption">
-        <h3>Res</h3>
-        <p>La carne de res es una importante fuente de proteínas constructoras, imprescindibles para la formación celular en el organismo</p>
-      </div>
-    </slide>
-    <slide>
-      <img src="../../../assets/img/cerdoMobile.png" alt="cerdo slide" style="display: block; width: 100%;"
-        class="carouselImg">
-      <div class="carousel-caption">
-        <h3>Cerdo</h3>
-        <p>La carne de cerdo además está muy recomendada en épocas de crecimiento, ya que es un alimento apetecible para los niños por su peculiar sabor</p>
-      </div>
-    </slide>
-    <slide>
-      <img src="../../../assets/img/polloMobile.png" alt="pollo slide" style="display: block; width: 100%;"
-        class="carouselImg">
-      <div class="carousel-caption">
-        <h3>Pollo</h3>
-        <p>Si está buscando una gran fuente de proteína magra que se baja en grasa, el pollo es la respuesta.</p>
-      </div>
-    </slide>
-    <slide>
-      <img src="../../../assets/img/pecadoMobile.png" alt="pescado slide" style="display: block; width: 100%;"
-        class="carouselImg">
-      <div class="carousel-caption">
-        <h3>Pescado</h3>
-        <p>Su contenido en grasa no suele ser superior al 2 %. Abundante en vitamina D, tiene un alto índice de proteínas y sales minerales. Es fácil de digerir.</p>
-      </div>
-    </slide>
-    <slide>
-      <img src="../../../assets/img/paroMobile.png" alt="pato slide" style="display: block; width: 100%;"
-        class="carouselImg">
-      <div class="carousel-caption">
-        <h3>Pato</h3>
-        <p>Destacan las vitaminas del grupo B, como la riboflavina, tiamina, niacina y vitamina B12), y también minerales (hierro de fácil absorción, zinc y fósforo).</p>
-      </div>
-    </slide>
-  </carousel>
+<section class="mt-4 px-2 d-lg-flex justify-content-lg-between align-items-lg-center">
+  <section class="desktopWidth d-lg-flex justify-content-lg-center">
+    <article class="carWidth">
+      <carousel [noPause]="false">
+        <slide>
+          <img src="../../../assets/img/resMobile.png" alt="res slide" style="display: block; width: 100%;"
+            class="carouselImg">
+          <div class="carousel-caption">
+            <h3 class="d-block d-lg-none">Res</h3>
+            <p>La carne de res es una importante fuente de proteínas constructoras, imprescindibles para la formación
+              celular en el organismo</p>
+          </div>
+        </slide>
+        <slide>
+          <img src="../../../assets/img/cerdoMobile.png" alt="cerdo slide" style="display: block; width: 100%;"
+            class="carouselImg">
+          <div class="carousel-caption">
+            <h3 class="d-block d-lg-none">Cerdo</h3>
+            <p>La carne de cerdo además está muy recomendada en épocas de crecimiento, ya que es un alimento apetecible
+              para los niños por su peculiar sabor</p>
+          </div>
+        </slide>
+        <slide>
+          <img src="../../../assets/img/polloMobile.png" alt="pollo slide" style="display: block; width: 100%;"
+            class="carouselImg">
+          <div class="carousel-caption">
+            <h3 class="d-block d-lg-none">Pollo</h3>
+            <p>Si está buscando una gran fuente de proteína magra que se baja en grasa, el pollo es la respuesta.</p>
+          </div>
+        </slide>
+        <slide>
+          <img src="../../../assets/img/pecadoMobile.png" alt="pescado slide" style="display: block; width: 100%;"
+            class="carouselImg">
+          <div class="carousel-caption">
+            <h3 class="d-block d-lg-none">Pescado</h3>
+            <p>Su contenido en grasa no suele ser superior al 2 %. Abundante en vitamina D, tiene un alto índice de
+              proteínas y sales minerales. Es fácil de digerir.</p>
+          </div>
+        </slide>
+        <slide>
+          <img src="../../../assets/img/paroMobile.png" alt="pato slide" style="display: block; width: 100%;"
+            class="carouselImg">
+          <div class="carousel-caption">
+            <h3 class="d-block d-lg-none">Pato</h3>
+            <p>Destacan las vitaminas del grupo B, como la riboflavina, tiamina, niacina y vitamina B12), y también
+              minerales (hierro de fácil absorción, zinc y fósforo).</p>
+          </div>
+        </slide>
+      </carousel>
+    </article>
+  </section>
+  <article class="d-none d-lg-block">
+    <div class="fixed-app-container">
+      <article>
+        <div class="offers mt-3 mt-lg-0 d-lg-flex flex-lg-column justify-content-lg-center align-items-lg-center">
+          <p class="text-center">Ofertas</p>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/yQeljbldmpU?controls=0" frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class=" p-4 text-center text-lg-left quality">
+          <p>cortes <br class="d-none d-lg-block"> de la mas <br class="d-none d-lg-block"> alta calidad <br
+              class="d-none d-lg-block"> a unos pasos <br class="d-none d-lg-block"> de tu mesa</p>
+          <hr class="d-none d-lg-block">
+        </div>
+      </article>
+    </div>
+  </article>
 </section>

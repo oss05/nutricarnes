@@ -1,8 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap");
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 h1,
@@ -15,8 +15,7 @@ a {
   color: #525252;
 }
 
-// -------main ----- 
-
+// -------main -----
 
 .tips {
   border: solid 4px #707070;
@@ -29,11 +28,11 @@ a {
 }
 
 .address {
-  border-left: solid 4px #FC0100;
+  border-left: solid 4px #fc0100;
 }
 
 .offers {
-  background: #DCDCDC;
+  background: #dcdcdc;
   padding: 12px 0;
 }
 
@@ -57,9 +56,13 @@ a {
   padding-bottom: 6px;
 }
 
-// ----- desktop ---- 
+// ----- desktop ----
 
 @media only screen and (min-width: 600px) {
+  .desktopWidth {
+    width: 85%;
+  }
+
   .desktopNav {
     width: 100%;
     background-color: #53535380;
@@ -67,34 +70,35 @@ a {
     // border: solid 1px blue;
   }
 
-  .desktopNav>div li {
+  .desktopNav > div li {
     height: 70px;
     padding: 0;
   }
 
-  .desktopNav>div li a {
+  .desktopNav > div li a {
     height: 70px;
     padding: 0 3em;
     color: #fff;
   }
 
-  .selected-area, .desktopNav>div li a:hover{
+  .selected-area,
+  .desktopNav > div li a:hover {
     background-color: #fff;
     color: #000 !important;
   }
 
   .fixed-app-container {
-    width: 20%;
-    position: fixed;
-    right: 0;
-    top: 0;
+    width: 100%;
+    // position: fixed;
+    // right: 0;
+    // top: 0;
   }
 
   .offers {
     height: 45vh;
   }
 
-  .offers>iframe {
+  .offers > iframe {
     height: 50% !important;
   }
 
@@ -103,11 +107,11 @@ a {
     font-size: 2.5em;
   }
 
-  .quality>p {
+  .quality > p {
     border-bottom: none !important;
   }
 
-  .quality>hr {
+  .quality > hr {
     width: 100px;
     height: 8px;
     border: none;
@@ -118,22 +122,75 @@ a {
   footer {
     width: 100%;
     height: 10vh;
-    position: absolute;
-    bottom: 0;
+    // position: absolute;
+    // bottom: 0;
   }
 
-  footer>section article img {
+  footer > section article img {
     width: 40px !important;
   }
 
-  footer>section article p {
+  footer > section article p {
     font-size: 20px;
   }
 
-
-  // ----home --- 
+  // ----home ---
   .homeSection {
-    width: 131%;
+    width: 100%;
     // border: solid 1px red;
+  }
+
+  .desktopWidth > article h2 {
+    font-size: 3em;
+  }
+
+  .tips,
+  .address {
+    font-size: 2em;
+  }
+
+  // about us
+  .about-us {
+    height: 700px;
+  }
+
+  .about-us > p,
+  .recetaryMain > p {
+    font-size: 1.5em;
+  }
+
+  .about-us > article {
+    width: 100%;
+  }
+
+  //products
+
+  .carWidth {
+    width: 60%;
+  }
+
+  .carousel-caption {
+    bottom: 120px !important;
+  }
+
+  .carousel-caption > p {
+    font-size: 2em;
+    margin: 0;
+  }
+
+  .carousel-control.left,
+  .carousel-control.right {
+    background-image: none;
+  }
+
+  //contact
+
+  .map {
+    width: 100%;
+  }
+
+  // Recetary
+  .recetaryMain {
+    margin-top: 10em;
   }
 }

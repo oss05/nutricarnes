@@ -17,33 +17,38 @@
     </div>
   </nav>
   <nav class="d-none d-lg-block desktopNav fixed-top">
-    <div class="d-flex justify-content-center">
+    <div class="d-flex justify-content-center align-items-center">
+      <a [routerLink]="['/']"><img src="../assets/img/nav-logo.png" alt="logo navbar" style="width: 200px; object-fit: cover; margin: 0 4em 0 -4em ;"></a> 
       <ul class="d-flex">
-        <li><a class=" d-flex align-items-lg-center justify-content-lg-center" [routerLinkActive]="['selected-area']" [routerLink]="['/nosotros']">Nosotros</a></li>
-        <li><a class=" d-flex align-items-lg-center justify-content-lg-center" [routerLinkActive]="['selected-area']" [routerLink]="['/productos']">Productos</a></li>
-        <li><a class=" d-flex align-items-lg-center justify-content-lg-center" [routerLinkActive]="['selected-area']" [routerLink]="['/contacto']">Contacto</a></li>
-        <li><a class=" d-flex align-items-lg-center justify-content-lg-center" [routerLinkActive]="['selected-area']" [routerLink]="['/recetario']">Recetario</a></li>
+        <li><a class=" d-flex align-items-lg-center justify-content-lg-center" [routerLinkActive]="['selected-area']"
+            [routerLink]="['/nosotros']">Nosotros</a></li>
+        <li><a class=" d-flex align-items-lg-center justify-content-lg-center" [routerLinkActive]="['selected-area']"
+            [routerLink]="['/productos']">Productos</a></li>
+        <li><a class=" d-flex align-items-lg-center justify-content-lg-center" [routerLinkActive]="['selected-area']"
+            [routerLink]="['/contacto']">Contacto</a></li>
+        <li><a class=" d-flex align-items-lg-center justify-content-lg-center" [routerLinkActive]="['selected-area']"
+            [routerLink]="['/recetario']">Recetario</a></li>
       </ul>
     </div>
   </nav>
 </header>
-<main class="d-lg-flex">
+<main>
   <router-outlet></router-outlet>
-  <div *ngIf="_router.url != '/contacto'" class="fixed-app-container">
-    <article class="p-2 mx-2 my-3 text-center tips d-lg-none">
+  <div *ngIf="_router.url != '/contacto'" class="fixed-app-container d-block d-lg-none">
+    <article class="p-2 mx-2 my-3 text-center tips">
       <p>Sigue nuestros tips y recetas en redes sociales</p>
     </article>
-    <article class="p-2 mx-2 my-4 text-left address d-lg-none"
+    <article class="p-2 mx-2 my-4 text-left address"
       *ngIf="_router.url != '/recetario' && _router.url != '/productos' && _router.url != '/nosotros'">
       <p> Estamos ubicados en pasillo 2, Locales 166 y 168 central de abastos CDMX</p>
     </article>
     <article>
-      <div class="offers mt-3 mt-lg-0 d-lg-flex flex-lg-column justify-content-lg-center align-items-lg-center">
+      <div class="offers mt-3">
         <p class="text-center">Ofertas</p>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/yQeljbldmpU?controls=0" frameborder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
-      <div class=" p-4 text-center text-lg-left quality">
+      <div class=" p-4 text-center quality">
         <p>cortes <br class="d-none d-lg-block"> de la mas <br class="d-none d-lg-block"> alta calidad <br
             class="d-none d-lg-block"> a unos pasos <br class="d-none d-lg-block"> de tu mesa</p>
         <hr class="d-none d-lg-block">
@@ -58,8 +63,9 @@
       <p class="d-lg-flex align-items-lg-center ml-lg-3">@carniceria.nutricarnes</p>
     </article>
   </section>
-  <section class="d-flex address" *ngIf="_router.url != '/contacto' && _router.url != '/' && _router.url != '/#one' && _router.url != '/#two' && _router.url != '/#three' && _router.url != '/#four' && _router.url != '/#five' && _router.url != '/#six'">
+  <section class="d-flex address ml-lg-5"
+    *ngIf="_router.url != '/contacto' && _router.url != '/' && _router.url != '/#one' && _router.url != '/#two' && _router.url != '/#three' && _router.url != '/#four' && _router.url != '/#five' && _router.url != '/#six'">
     <img class="mx-2" src="../assets/img/logoFooter.png" alt="logo nutricarnes">
-    <p class="text-center">Estamos ubicados en pasillo 2, Locales 166 y 168 central de abastos CDMX</p>
+    <p class="text-center m-lg-0 d-lg-flex align-items-lg-center">Estamos ubicados en pasillo 2, Locales 166 y 168 central de abastos CDMX</p>
   </section>
 </footer>

@@ -3,17 +3,22 @@
   object-fit: cover;
 }
 
+.bold {
+  font-weight: bold;
+  font-size: 110%;
+}
+
 // ---- Desktop Carousel --- 
-$unit: 400px;
+$unit: 450px;
 
 #carousel {
   width: $unit;
 }
 
 #container {
-   border: 1px solid #000;
+  //  border: 1px solid #000;
   border-radius: 2px;
-  box-shadow: 3px 3px 5px #888;
+  box-shadow: 0px 3px 8px #888;
   overflow: hidden;
   width: $unit;
   
