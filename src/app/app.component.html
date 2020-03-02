@@ -18,7 +18,8 @@
   </nav>
   <nav class="d-none d-lg-block desktopNav fixed-top">
     <div class="d-flex justify-content-center align-items-center">
-      <a [routerLink]="['/']"><img src="../assets/img/nav-logo.png" alt="logo navbar" style="width: 200px; object-fit: cover; margin: 0 4em 0 -4em ;"></a> 
+      <a [routerLink]="['/']"><img src="../assets/img/nav-logo.png" alt="logo navbar"
+          style="width: 200px; object-fit: cover; margin: 0 4em 0 -4em ;"></a>
       <ul class="d-flex">
         <li><a class=" d-flex align-items-lg-center justify-content-lg-center" [routerLinkActive]="['selected-area']"
             [routerLink]="['/nosotros']">Nosotros</a></li>
@@ -34,38 +35,45 @@
 </header>
 <main>
   <router-outlet></router-outlet>
-  <div *ngIf="_router.url != '/contacto'" class="fixed-app-container d-block d-lg-none">
+  <div class="fixed-app-container d-block d-lg-none">
     <article class="p-2 mx-2 my-3 text-center tips">
-      <p>Sigue nuestros tips y recetas en redes sociales</p>
+      <a href="https://www.facebook.com/carniceria.nutricarnes/" target="_blank">
+        <p>Sigue nuestros tips y recetas en redes sociales</p>
+      </a>
     </article>
-    <article class="p-2 mx-2 my-4 text-left address"
-      *ngIf="_router.url != '/recetario' && _router.url != '/productos' && _router.url != '/nosotros'">
+    <article class="p-2 mx-2 my-4 text-left address">
       <p> Estamos ubicados en pasillo 2, Locales 166 y 168 central de abastos CDMX</p>
     </article>
-    <article>
-      <div class="offers mt-3">
-        <p class="text-center">Ofertas</p>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/yQeljbldmpU?controls=0" frameborder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-      <div class=" p-4 text-center quality">
-        <p>cortes <br class="d-none d-lg-block"> de la mas <br class="d-none d-lg-block"> alta calidad <br
-            class="d-none d-lg-block"> a unos pasos <br class="d-none d-lg-block"> de tu mesa</p>
-        <hr class="d-none d-lg-block">
-      </div>
-    </article>
+    <app-offer-mobile></app-offer-mobile>
   </div>
 </main>
 <footer class="px-2 py-3 d-lg-flex align-items-lg-center">
   <section>
     <article class="d-flex justify-content-center mb-3 mb-lg-0 ml-lg-5">
-      <img src="../assets/icons/fb.svg" alt="facebook logo">
-      <p class="d-lg-flex align-items-lg-center ml-lg-3">@carniceria.nutricarnes</p>
+      <a href="https://www.facebook.com/carniceria.nutricarnes/" target="_blank" class="mx-3"><img
+          src="../assets/icons/fb.svg" alt="facebook logo"></a>
+      <a href="https://api.whatsapp.com/send?phone=5215523132742&text=Me%20gustaría%20saber%20más%20de%20Nutricarnes."
+        target="_blank" class="mx-3"><img src="../assets/icons/whatsapp.svg" alt="whatsapp logo"></a>
+      <a href="https://www.instagram.com/carniceria.nutricarnes/?hl=es-la" target="_blank" class="mx-3"><img
+          src="../assets/icons/instagram.svg" alt="foursquare logo"></a>
+      <a href="http://4sq.com/1jMIPum" target="_blank" class="mx-3"><img src="../assets/icons/gps.svg"
+          alt="foursquare logo"></a>
     </article>
   </section>
-  <section class="d-flex address ml-lg-5"
-    *ngIf="_router.url != '/contacto' && _router.url != '/' && _router.url != '/#one' && _router.url != '/#two' && _router.url != '/#three' && _router.url != '/#four' && _router.url != '/#five' && _router.url != '/#six'">
+  <section class="d-flex address ml-lg-5">
     <img class="mx-2" src="../assets/img/logoFooter.png" alt="logo nutricarnes">
-    <p class="text-center m-lg-0 d-lg-flex align-items-lg-center">Estamos ubicados en pasillo 2, Locales 166 y 168 central de abastos CDMX</p>
+    <p class="text-center m-lg-0 d-lg-flex align-items-lg-center">Estamos ubicados en pasillo 2, Locales 166 y 168
+      central de abastos CDMX</p>
+  </section>
+  <section class="ml-auto">
+    <article class="mr-lg-5">
+      <a (click)="ngxSmartModalService.getModal('myModal').open()" class="d-flex flex-column align-items-center">
+        <img src="../assets/icons/delivery.svg" alt="delivery logo">
+        <p class="d-lg-flex align-items-lg-center ml-lg-3">Haz un pedido por Rappi</p>
+      </a>
+    </article>
   </section>
 </footer>
+<ngx-smart-modal #myModal identifier="myModal">
+  <video src="../assets/videos/VideoRappi.mp4" controls loop autoplay [muted]="true" style="width: 100%;"></video>
+</ngx-smart-modal>

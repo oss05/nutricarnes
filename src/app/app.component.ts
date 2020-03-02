@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
+import { NgxSmartModalService } from 'ngx-smart-modal';
+
+
+declare var gtag;
 
 @Component({
   selector: 'app-root',
@@ -9,10 +14,21 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'nutricarnes';
   isCollapsed = true;
-  router: string;
+  
 
-  constructor(private _router: Router) {
+  constructor(router: Router, public ngxSmartModalService: NgxSmartModalService) {
 
-    this.router = _router.url;
+    const navEndEvents = router.events.pipe(
+      filter(event => event instanceof NavigationEnd),
+    );
+    navEndEvents.subscribe((event: NavigationEnd) => {
+      gtag('config', 'UA-158795726-1', {
+        'page_path': event.urlAfterRedirects
+      });
+    });
   }
+
+
+
+  
 }

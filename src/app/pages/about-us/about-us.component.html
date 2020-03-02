@@ -1,36 +1,21 @@
-<section class="d-lg-flex justify-content-lg-between">
-    <article class="d-lg-flex desktopWidth justify-content-lg-between">
-        <div class="d-none d-lg-block leftDesktopImage"><img src="../../../assets/img/about-us-meat.png" alt=""></div>
-        <div class="d-lg-flex flex-lg-column justify-content-lg-center align-items-lg-center about-us">
-            <h2 class="text-center">Conócenos</h2>
-            <p class="px-4 mt-2 px-lg-5">Somos una empresa dedicada a la comercialización de carne de res, cerdo y pollo
-                de
-                la
-                más alta calidad con más de 8 años de experiencia; pensado en usted mantenemos un equilibrio entre la
-                calidad-precio de todos nuestros productos permitiéndonos contar con su preferencia. Nos hemos
-                convertido en una de las principales distribuidoras de aves y cárnicos en la CEDA.</p>
-            <article class="d-flex flex-column align-items-center flex-lg-row justify-content-lg-around">
-                <img src="../../../assets/img/espinazo.png" alt="Espinazo" class="my-4">
-                <img src="../../../assets/img/bbq.png" alt="Filete BBQ">
-            </article>
-        </div>
-    </article>
-    <article class="d-none d-lg-block">
-        <div class="fixed-app-container">
-            <article>
-                <div
-                    class="offers mt-3 mt-lg-0 d-lg-flex flex-lg-column justify-content-lg-center align-items-lg-center">
-                    <p class="text-center">Ofertas</p>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/yQeljbldmpU?controls=0"
-                        frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                </div>
-                <div class=" p-4 text-center text-lg-left quality">
-                    <p>cortes <br class="d-none d-lg-block"> de la mas <br class="d-none d-lg-block"> alta calidad <br
-                            class="d-none d-lg-block"> a unos pasos <br class="d-none d-lg-block"> de tu mesa</p>
-                    <hr class="d-none d-lg-block">
-                </div>
-            </article>
-        </div>
-    </article>
+<section class="d-lg-flex">
+  <article class="d-lg-flex about-us-container">
+    <div class="d-none d-lg-block leftDesktopImage" style="width: 100%">
+      <video autoplay loop [muted]="true" src="../../../assets/videos/cinema.mp4" style="width: 100%; height: 90vh; object-fit: cover;"></video>
+    </div>
+    <div class="d-lg-flex flex-lg-column justify-content-lg-center align-items-lg-center about-us">
+      <h2 class="text-center section-title animated forwards fadeInDown delay-0s">Acerca de Nosotros</h2>
+      <p class="px-4 mt-2 px-lg-5 animated forwards fadeInUp delay-0s">Somos una empresa dedicada a la comercialización de carne de res, cerdo y pollo
+        de
+        la
+        más alta calidad con más de 8 años de experiencia; pensado en usted mantenemos un equilibrio entre la
+        calidad-precio de todos nuestros productos permitiéndonos contar con su preferencia. Nos hemos
+        convertido en una de las principales distribuidoras de aves y cárnicos en la CEDA.</p>
+      <article class="d-flex flex-column align-items-center flex-lg-row justify-content-center">
+        <img src="../../../assets/img/espinazo.png" alt="Espinazo" class="my-4 mx-4 animated forwards fadeInLeft delay-0s">
+        <img src="../../../assets/img/bbq.png" alt="Filete BBQ" class="my-4 mx-4 animated forwards fadeInRight delay-0s">
+      </article>
+    </div>
+  </article>
+  <app-offer style="width: 20%;"></app-offer>
 </section>

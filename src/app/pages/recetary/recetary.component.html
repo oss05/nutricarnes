@@ -1,53 +1,43 @@
-<section class="d-lg-flex justify-content-lg-between">
-  <section class="recetaryMain desktopWidth">
-    <h2 class="text-center">Recetario</h2>
-    <p class="px-4 text-lg-center">Aprende a cocinar las mejores recetas de comida fáciles, recetas de comida mexicana,
-      recetas de comida saludable de forma rápida y sencilla.</p>
-    <article class="recetary container">
-      <div class="row  justify-content-lg-center">
-        <div class="col-12 col-lg-5">
-          <iframe class="mb-lg-4" width="560" height="315" src="https://www.youtube.com/embed/yQeljbldmpU?controls=0"
-            frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-          <img class="mb-lg-4" src="../../../assets/img/recetaChapata.png" alt="Receta Chapata">
+<section class="d-flex">
+  <article class="recetary-container">
+    <video autoplay loop [muted]=true style="width: 100%;" src="../../../assets/videos/recetario.mp4"></video>
+    <div class="d-flex flex-column align-items-center mb-5">
+      <img src="../../../assets/img/receta.png" alt="receta header" class="img-header-recetary">
+      <div class="content-recetary">
+        <h2 style="font-size: 3em; margin: 1em 0; color: black;" class="text-center text-lg-left">Ensalada Cesar <br> con pollo</h2>
+        <div class="d-flex flex-column-reverse flex-lg-row" style="width: 100%;">
+          <img src="../../../assets/img/receta-cesar1.jpg" alt="imagen ensalada cesar" class="recetary-image mb-4 mb-lg-0">
+          <div class="d-flex flex-column justify-content-center align-items-center px-5">
+            <div class="d-flex mb-3">
+              <img src="../../../assets/img/ingredientes.png" alt="ingredientes icono" style="width:30px;">
+              <h3  style="font-size: 3em; padding:0 5px;">Ingredientes</h3>
+            </div>
+            <ul style="font-size: 2em;">
+              <li>200 g Lechuga romana</li>
+              <li>Salsa César (ingredientes y preparación detallada abajo)</li>
+              <li>Picastostes de pan (pan tostado en cubitos)</li>
+              <li>40 g Queso parmesano</li>
+              <li>1/2 pechuga de pollo</li>
+              <li>Sal</li>
+              <li>Pimienta negra</li>
+            </ul>
+          </div>
         </div>
-        <hr>
-        <div class="col-12 col-lg-5">
-          <iframe class="mb-lg-4" width="560" height="315" src="https://www.youtube.com/embed/yQeljbldmpU?controls=0"
-            frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-          <img class="mb-lg-4" src="../../../assets/img/recetaEnsalada.png" alt="Receta ensalada cesar">
-        </div>
-        <hr>
-        <div class="col-12 col-lg-5">
-          <iframe class="mb-lg-4" width="560" height="315" src="https://www.youtube.com/embed/yQeljbldmpU?controls=0"
-            frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-          <img class="mb-lg-4" src="../../../assets/img/recetaTiras.png" alt="Receta tiras de carne">
-        </div>
-        <div class="col-12 col-lg-5">
-          <iframe class="mb-lg-4" width="560" height="315" src="https://www.youtube.com/embed/yQeljbldmpU?controls=0"
-            frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-          <img class="mb-lg-4" src="../../../assets/img/recetaTiras.png" alt="Receta tiras de carne">
+        <div class="d-flex flex-column flex-lg-row">
+          <div class="d-flex flex-column justify-content-center px-5">
+            <div class="d-flex justify-content-center mb-3">
+              <img src="../../../assets/img/preparacion.png" alt="preparacion icono" style="width:40px;">
+              <h3 style="font-size: 3em; padding:0 5px;">Preparacion</h3>
+            </div>
+            <p style="font-size: 2em; color: black;">Prepara una crema con el aguacate, la sal, pimienta y el aceite de oliva. Una de las tapas de la chapata
+              con esta preparación. En la otra unta mayonesa.
+            </p>
+            <p style="font-size: 2em; color: black;">En el pan, incorpora los ingredientes restantes en rebanadas, tapa y hornea para gratinar el queso.</p>
+          </div>
+          <img src="../../../assets/img/receta-cesar2.jpg" alt="imagen ensalada cesar"  class="recetary-image">
         </div>
       </div>
-    </article>
-  </section>
-  <article class="d-none d-lg-block">
-    <div class="fixed-app-container">
-      <article>
-        <div class="offers mt-3 mt-lg-0 d-lg-flex flex-lg-column justify-content-lg-center align-items-lg-center">
-          <p class="text-center">Ofertas</p>
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/yQeljbldmpU?controls=0" frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <div class=" p-4 text-center text-lg-left quality">
-          <p>cortes <br class="d-none d-lg-block"> de la mas <br class="d-none d-lg-block"> alta calidad <br
-              class="d-none d-lg-block"> a unos pasos <br class="d-none d-lg-block"> de tu mesa</p>
-          <hr class="d-none d-lg-block">
-        </div>
-      </article>
     </div>
   </article>
+  <app-offer style="width: 20%;"></app-offer>
 </section>

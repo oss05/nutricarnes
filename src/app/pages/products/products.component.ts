@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsComponent implements OnInit {
 
+  flipDiv = false;
+  onClick() {
+    this.flipDiv = !this.flipDiv;
+  }
+
   constructor() { }
 
   ngOnInit() {

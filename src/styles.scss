@@ -1,5 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap");
+@import "~ngx-smart-modal/ngx-smart-modal";
+
+html:root {
+  --swiper-theme-color: white;
+}
 
 body {
   font-family: "Roboto", sans-serif;
@@ -13,6 +18,11 @@ p {
 
 a {
   color: #525252;
+}
+.section-title {
+  text-align: center;
+  margin-top: 0.5em;
+  font-size: 3em;
 }
 
 // -------main -----
@@ -38,12 +48,13 @@ a {
 
 .offers p {
   color: #525252;
-  font-size: 25px;
+  font-size: 30px;
+  font-weight: bold;
 }
 
-.offers iframe {
-  width: 100%;
-  height: 200px;
+.offers video {
+  width: 90%;
+  height: 85%;
 }
 
 .quality {
@@ -52,17 +63,59 @@ a {
 
 .quality p {
   color: #fff;
-  border-bottom: 3px solid #fff;
+  // border-bottom: 3px solid #fff;
   padding-bottom: 6px;
 }
 
+.about-us > p,
+.recetaryMain > p {
+  font-size: 15px;
+}
+
+.products-container {
+  width: 100%;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 400px;
+  height: 227px;
+  perspective: 1000px;
+  border-radius: 30px;
+}
+
+.flip-card-front > img,
+.flip-card-back > img {
+  width: 100%;
+  height: 227px;
+}
+
+.recetary-container {
+  width: 100%;
+}
+
+.img-header-recetary {
+  width: 100%;
+}
+
+.content-recetary{
+  width: 100%;
+}
+
+.recetary-image {
+  width: 100%; 
+  object-fit: cover;
+}
+
+.nsm-dialog {
+  max-width: 100%;
+}
+
+
+
 // ----- desktop ----
 
-@media only screen and (min-width: 600px) {
-  .desktopWidth {
-    width: 85%;
-  }
-
+@media only screen and (min-width: 800px) {
   .desktopNav {
     width: 100%;
     background-color: #53535380;
@@ -95,15 +148,15 @@ a {
   }
 
   .offers {
-    height: 45vh;
+    height: 40vh;
   }
 
-  .offers > iframe {
-    height: 50% !important;
-  }
+  // .offers video {
+  //   margin-top: -2em;
+  // }
 
   .quality {
-    height: 45vh;
+    height: 50vh;
     font-size: 2.5em;
   }
 
@@ -127,11 +180,11 @@ a {
   }
 
   footer > section article img {
-    width: 40px !important;
+    width: 30px !important;
   }
 
   footer > section article p {
-    font-size: 20px;
+    font-size: 14px;
   }
 
   // ----home ---
@@ -144,19 +197,33 @@ a {
     font-size: 3em;
   }
 
+  .best-meat {
+    font-size: 4em;
+    margin-left: 4em;
+    font-weight: lighter;
+  }
+
   .tips,
   .address {
-    font-size: 2em;
+    font-size: 1.5em;
+  }
+
+  .section-title {
+    text-align: center;
+    margin-top: 3em;
+    font-size: 3em;
   }
 
   // about us
-  .about-us {
-    height: 700px;
+
+  .about-us-container {
+    width: 80%;
+    height: 90vh;
   }
 
   .about-us > p,
   .recetaryMain > p {
-    font-size: 1.5em;
+    font-size: 2em;
   }
 
   .about-us > article {
@@ -165,32 +232,55 @@ a {
 
   //products
 
-  .carWidth {
-    width: 60%;
+  .products-container {
+    width: 80%;
   }
 
-  .carousel-caption {
-    bottom: 120px !important;
+  .flip-card-front > img,
+  .flip-card-back > img {
+    width: 100%;
+    height: 100%;
   }
 
-  .carousel-caption > p {
-    font-size: 2em;
-    margin: 0;
+  .flip-card {
+    background-color: transparent;
+    width: 400px;
+    height: 275px;
+    perspective: 1000px;
+    border-radius: 30px;
   }
-
-  .carousel-control.left,
-  .carousel-control.right {
-    background-image: none;
-  }
-
   //contact
+  .map-container {
+    width: 80%;
+  }
 
   .map {
     width: 100%;
   }
 
   // Recetary
+  .recetary-container {
+    width: 80%;
+  }
+
   .recetaryMain {
     margin-top: 10em;
+  }
+
+  .img-header-recetary {
+    width: 80%;
+  }
+
+  .content-recetary{
+    width: 80%;
+  }
+
+  .recetary-image {
+    width: 50%; 
+    object-fit: cover;
+  }
+
+  .nsm-dialog {
+    max-width: 80%;
   }
 }
