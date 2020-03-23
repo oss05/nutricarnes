@@ -5,6 +5,7 @@ import { NgxSmartModalService } from 'ngx-smart-modal';
 
 
 declare var gtag;
+declare var fbq;
 
 @Component({
   selector: 'app-root',
@@ -25,6 +26,7 @@ export class AppComponent {
       gtag('config', 'UA-158795726-1', {
         'page_path': event.urlAfterRedirects
       });
+      fbq('track', 'PageView');
     });
   }
 
