@@ -1,108 +1,123 @@
 <section class="d-flex">
   <section class="float-recetary-icons">
-    <img [src]="carnes[0].url" alt="icono carne de {{carnes[0].nombre}}">
-    <img [src]="carnes[1].url" alt="icono carne de {{carnes[1].nombre}}">
-    <img [src]="carnes[2].url" alt="icono carne de {{carnes[2].nombre}}">
-    <img [src]="carnes[3].url" alt="icono carne de {{carnes[3].nombre}}">
+      <img (click)="toggleShowCow()" [src]=" carnes[0].url" alt="icono carne de {{carnes[0].nombre}}">
+    
+    <img (click)="toggleShowChicken()" [src]=" carnes[1].url" alt="icono carne de {{carnes[1].nombre}}">
+    <img (click)="toggleShowPig()" [src]=" carnes[2].url" alt="icono carne de {{carnes[2].nombre}}">
+    <img (click)="toggleShowFish()" [src]=" carnes[3].url" alt="icono carne de {{carnes[3].nombre}}">
   </section>
   <section class="d-flex flex-column align-items-center">
     <video autoplay loop [muted]=true style="width: 100%;" src="../../../assets/videos/recetario.mp4"></video>
     <img src="../../../assets/img/receta.png" alt="receta header" class="img-header-recetary my-3">
-    <!-- ------------------------- RES ---------- -->
-    <article>
-      <div class="d-flex flex-column align-items-center mb-5">
-        <div class="content-recetary">
-          <h2 style="font-size: 3em; margin: 1em 0; color: black;" class="text-center">Picadillo de carne molida</h2>
-          <div class="d-flex justify-content-center flex-column-reverse flex-lg-row" style="width: 100%;">
-            <div class="d-flex flex-column justify-content-center align-items-center px-5 mr-0 mr-lg-4"
-              style=" background-color: #F4F4F4;">
-              <div class="d-flex mb-3">
-                <img src="../../../assets/img/ingredientes.png" alt="ingredientes icono" style="width:30px;">
-                <h3 style="font-size: 3em; padding:0 5px;">Ingredientes</h3>
-              </div>
-              <ul style="font-size: 2em;">
-                <li>1 libra carne de res (puede ser mitad res y mitad cerdo)</li>
-                <li>1 cebolla mediana en cuadritos</li>
-                <li>5 tomates para la salsa</li>
-                <li>2 dientes ajo</li>
-                <li>1 trocito cebolla para la salsa</li>
-                <li>2 dientes ajo triturados</li>
-                <li>1 taza agua o caldo</li>
-                <li>1 zanahoria grande picada en cubitos pequeños</li>
-                <li>1 papa picada en cubitos</li>
-                <li>1 calabasita el cubitos</li>
-                <li>1/2 taza chícharos</li>
-                <li>1/4 de cucharadita de comino en polvo opcional )</li>
-                <li>1/2 cucharadita orégano deshidratado</li>
-                <li>Tostadas para acompañar</li>
-                <li>Sal y pimienta</li>
-              </ul>
-            </div>
-            <img src="../../../assets/img/picadillo-res-receta-mixta.png" alt="imagen tacos pescado"
-              class="recetary-image mb-4 mb-lg-0">
-          </div>
-          <div class="d-flex justify-content-center mt-5">
-            <div class="d-flex flex-column justify-content-center px-5 steps">
-              <div class="d-flex justify-content-center mb-3">
-                <img src="../../../assets/img/preparacion.png" alt="preparacion icono" style="width:40px;">
-                <h3 style="font-size: 3em; padding:0 5px;">Preparacion</h3>
-              </div>
-              <p style="font-size: 2em; color: black;">En una cacerola mediana fríe la carne hasta que cambie de color ysuelte su grasa y escurre el exceso, reservar, enseguida pica finamente la cebolla, ajo y agregar a la carne,  sofrie, hasta que la cebolla se vuelva transparente enseguida coloca en el vaso de la licuadora los tomates, los ajos y la sal, el agua y licúa bien..</p>
-              <p style="font-size: 2em; color: black;">  Verter la mezcla a un colador colocado directamente sobre la cacerola, de manera que la salsa colada caiga sobre la carne y dejar hasta que se integre la salsa con la carne</p>
-              <p style="font-size: 2em; color: black;"> Pela la zanahoria, papa y córtalos en cuadritos chicos añade a la carne las verduras picadas, el comino y el orégano</p>
-              <p style="font-size: 2em; color: black;">Cuécelo a fuego medio de 10 a 15 minutos, pasado el tiempo añade al final la calabaza picada en cubos y los chícharos dejar cocer hasta que la verdura esté suave y se haya evaporado un poco el jugo o a tu gusto,
-              </p>
-              <p style="font-size: 2em; color: black;">Una vez listo sirve caliente sobre tostadas o con la guarnición de tu preferencia queda muy rica, espero les sea de ayudaSe puede acompañar también con rajas de chile, zanahorias en escabeche ola salsa picante. De su preferencia</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </article>
 
-    <article>
-      <div class="d-flex flex-column align-items-center mb-5">
-        <div class="content-recetary">
-          <h2 style="font-size: 3em; margin: 1em 0; color: black;" class="text-center">Alambre de Res</h2>
-          <div class="d-flex justify-content-center flex-column-reverse flex-lg-row" style="width: 100%;">
-            <div class="d-flex flex-column justify-content-center align-items-center px-5 mr-0 mr-lg-4"
-              style=" background-color: #F4F4F4;">
-              <div class="d-flex mb-3">
-                <img src="../../../assets/img/ingredientes.png" alt="ingredientes icono" style="width:30px;">
-                <h3 style="font-size: 3em; padding:0 5px;">Ingredientes</h3>
+    <!-- ------------------------- RES ---------- -->
+
+    <section *ngIf="isShownCow">
+      <article>
+        <div class="d-flex flex-column align-items-center mb-5">
+          <div class="content-recetary">
+            <h2 style="font-size: 3em; margin: 1em 0; color: black;" class="text-center">Picadillo de carne molida</h2>
+            <div class="d-flex justify-content-center flex-column-reverse flex-lg-row" style="width: 100%;">
+              <div class="py-5 d-flex flex-column justify-content-center align-items-center px-5 mr-0 mr-lg-4"
+                style=" background-color: #F4F4F4;">
+                <div class="d-flex mb-3">
+                  <img src="../../../assets/img/ingredientes.png" alt="ingredientes icono" style="width:30px;">
+                  <h3 style="font-size: 3em; padding:0 5px;">Ingredientes</h3>
+                </div>
+                <ul style="font-size: 2em;">
+                  <li>1 libra carne de res (puede ser mitad res y mitad cerdo)</li>
+                  <li>1 cebolla mediana en cuadritos</li>
+                  <li>5 tomates para la salsa</li>
+                  <li>2 dientes ajo</li>
+                  <li>1 trocito cebolla para la salsa</li>
+                  <li>2 dientes ajo triturados</li>
+                  <li>1 taza agua o caldo</li>
+                  <li>1 zanahoria grande picada en cubitos pequeños</li>
+                  <li>1 papa picada en cubitos</li>
+                  <li>1 calabasita el cubitos</li>
+                  <li>1/2 taza chícharos</li>
+                  <li>1/4 de cucharadita de comino en polvo opcional )</li>
+                  <li>1/2 cucharadita orégano deshidratado</li>
+                  <li>Tostadas para acompañar</li>
+                  <li>Sal y pimienta</li>
+                </ul>
               </div>
-              <ul style="font-size: 2em;">
-                <li>1/2 kg de carne de res</li>
-                <li>200 g tocino picado</li>
-                <li>1 cebolla rebanada</li>
-                <li>1 pimiento rojo sin semillas y cortado en cuadros</li>
-                <li>1 pimiento amarillo sin semillas y cortado en cuadros</li>
-                <li>Sal y pimiento al gusto</li>
-                <li>Aceite vegetal</li>
-              </ul>
+              <img src="../../../assets/img/picadillo-res-receta-mixta.png" alt="imagen tacos pescado"
+                class="recetary-image mb-4 mb-lg-0">
             </div>
-            <img src="../../../assets/img/pescado-salsa-roja.png" alt="imagen tacos pescado"
-              class="recetary-image mb-4 mb-lg-0">
-          </div>
-          <div class="d-flex justify-content-center mt-5">
-            <div class="d-flex flex-column justify-content-center px-5 steps">
-              <div class="d-flex justify-content-center mb-3">
-                <img src="../../../assets/img/preparacion.png" alt="preparacion icono" style="width:40px;">
-                <h3 style="font-size: 3em; padding:0 5px;">Preparacion</h3>
+            <div class="d-flex justify-content-center mt-5">
+              <div class="d-flex flex-column justify-content-center px-5 steps">
+                <div class="d-flex justify-content-center mb-3">
+                  <img src="../../../assets/img/preparacion.png" alt="preparacion icono" style="width:40px;">
+                  <h3 style="font-size: 3em; padding:0 5px;">Preparacion</h3>
+                </div>
+                <p style="font-size: 2em; color: black;">En una cacerola mediana fríe la carne hasta que cambie de color
+                  ysuelte su grasa y escurre el exceso, reservar, enseguida pica finamente la cebolla, ajo y agregar a
+                  la carne, sofrie, hasta que la cebolla se vuelva transparente enseguida coloca en el vaso de la
+                  licuadora los tomates, los ajos y la sal, el agua y licúa bien..</p>
+                <p style="font-size: 2em; color: black;"> Verter la mezcla a un colador colocado directamente sobre la
+                  cacerola, de manera que la salsa colada caiga sobre la carne y dejar hasta que se integre la salsa con
+                  la carne</p>
+                <p style="font-size: 2em; color: black;"> Pela la zanahoria, papa y córtalos en cuadritos chicos añade a
+                  la carne las verduras picadas, el comino y el orégano</p>
+                <p style="font-size: 2em; color: black;">Cuécelo a fuego medio de 10 a 15 minutos, pasado el tiempo
+                  añade al final la calabaza picada en cubos y los chícharos dejar cocer hasta que la verdura esté suave
+                  y se haya evaporado un poco el jugo o a tu gusto,
+                </p>
+                <p style="font-size: 2em; color: black;">Una vez listo sirve caliente sobre tostadas o con la guarnición
+                  de tu preferencia queda muy rica, espero les sea de ayudaSe puede acompañar también con rajas de
+                  chile, zanahorias en escabeche ola salsa picante. De su preferencia</p>
               </div>
-              <p style="font-size: 2em; color: black;">En una cacerola fríe el tocino con la cebolla y los pimientos
-                hasta que la cebolla esté acitronada y el pimiento comience a estar suave.
-              </p>
-              <p style="font-size: 2em; color: black;">Agrega la carne, sazona con sal y pimienta, revuelve para
-                integrar y cocina a fuego bajo hasta que esté cocida; retira y sirve con tortillas.</p>
             </div>
           </div>
         </div>
-      </div>
-    </article>
+      </article>
+
+      <article>
+        <div class="d-flex flex-column align-items-center mb-5">
+          <div class="content-recetary">
+            <h2 style="font-size: 3em; margin: 1em 0; color: black;" class="text-center">Alambre de Res</h2>
+            <div class="d-flex justify-content-center flex-column-reverse flex-lg-row" style="width: 100%;">
+              <div class="d-flex flex-column justify-content-center align-items-center px-5 mr-0 mr-lg-4"
+                style=" background-color: #F4F4F4;">
+                <div class="d-flex mb-3">
+                  <img src="../../../assets/img/ingredientes.png" alt="ingredientes icono" style="width:30px;">
+                  <h3 style="font-size: 3em; padding:0 5px;">Ingredientes</h3>
+                </div>
+                <ul style="font-size: 2em;">
+                  <li>1/2 kg de carne de res</li>
+                  <li>200 g tocino picado</li>
+                  <li>1 cebolla rebanada</li>
+                  <li>1 pimiento rojo sin semillas y cortado en cuadros</li>
+                  <li>1 pimiento amarillo sin semillas y cortado en cuadros</li>
+                  <li>Sal y pimiento al gusto</li>
+                  <li>Aceite vegetal</li>
+                </ul>
+              </div>
+              <img src="../../../assets/img/pescado-salsa-roja.png" alt="imagen tacos pescado"
+                class="recetary-image mb-4 mb-lg-0">
+            </div>
+            <div class="d-flex justify-content-center mt-5">
+              <div class="d-flex flex-column justify-content-center px-5 steps">
+                <div class="d-flex justify-content-center mb-3">
+                  <img src="../../../assets/img/preparacion.png" alt="preparacion icono" style="width:40px;">
+                  <h3 style="font-size: 3em; padding:0 5px;">Preparacion</h3>
+                </div>
+                <p style="font-size: 2em; color: black;">En una cacerola fríe el tocino con la cebolla y los pimientos
+                  hasta que la cebolla esté acitronada y el pimiento comience a estar suave.
+                </p>
+                <p style="font-size: 2em; color: black;">Agrega la carne, sazona con sal y pimienta, revuelve para
+                  integrar y cocina a fuego bajo hasta que esté cocida; retira y sirve con tortillas.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
     <!-- ---------- CERDO ------------- -->
 
     <!-- ---------------- POLLO ------------- -->
-   
+    <section *ngIf="isShownChicken">
       <article>
         <div class="d-flex flex-column align-items-center mb-5">
           <div class="content-recetary">
@@ -115,9 +130,9 @@
                   <h3 style="font-size: 3em; padding:0 5px;">Ingredientes</h3>
                 </div>
                 <ul style="font-size: 2em;">
-                  <li>6 a 8 mitades de pechuga de pollo deshuesadas y sin pellejo, cocidas y todavía calientes</li>
+                  <li>6 a 8 mitades de pechuga de pollo deshuesadas <br> y sin pellejo, cocidas y todavía calientes</li>
                   <li>2 chiles poblanos grandes, asados, pelados y sin venas</li>
-                  <li>1 lata (12 fl. oz.) de leche evaporada NESTLÉ CARNATION Evaporated  Milk</li>
+                  <li>1 lata (12 fl. oz.) de leche evaporada <br> NESTLÉ CARNATION Evaporated Milk</li>
                   <li>1 diente de ajo finamente picado</li>
                   <li>1 cucharadita de MAGGI Caldo Sabor a Pollo Granulado</li>
                   <li>1 cucharada de mantequilla o margarina</li>
@@ -133,9 +148,17 @@
                   <img src="../../../assets/img/preparacion.png" alt="preparacion icono" style="width:40px;">
                   <h3 style="font-size: 3em; padding:0 5px;">Preparacion</h3>
                 </div>
-                <p style="font-size: 2em; color: black;">Coloca la leche evaporada, los chiles, el ajo y el caldo en la licuadora;pon la tapa. Lícualos hasta obtener la consistencia deseada (salsa homogénea o con trocitos).</p>
-                <p style="font-size: 2em; color: black;">  Derrite la mantequilla en una cacerola mediana a fuego medio. Incorpora la harina, revolviéndola constantemente hasta obtener una consistencia homogénea. Agrega poco a poco la mezcla de poblanos. Cocina esta mezcla a fuego medio, revolviéndola constantemente, justo hasta que empiece a hervir y se ponga espesa. Rinde aproximadamente 2 tazas</p>
-                <p style="font-size: 2em; color: black;"> coloca las pechugas de pollo cocidas en platos individuales o en un platón para servir. Usa una cuchara y vierte un poco de la salsa sobrecada una de ellas. Vierte el resto de la salsa en un tazón o en una jarra pequeña de modo de que los invitados puedan servirse.</p>
+                <p style="font-size: 2em; color: black;">Coloca la leche evaporada, los chiles, el ajo y el caldo en la
+                  licuadora;pon la tapa. Lícualos hasta obtener la consistencia deseada (salsa homogénea o con
+                  trocitos).</p>
+                <p style="font-size: 2em; color: black;"> Derrite la mantequilla en una cacerola mediana a fuego medio.
+                  Incorpora la harina, revolviéndola constantemente hasta obtener una consistencia homogénea. Agrega
+                  poco a poco la mezcla de poblanos. Cocina esta mezcla a fuego medio, revolviéndola constantemente,
+                  justo hasta que empiece a hervir y se ponga espesa. Rinde aproximadamente 2 tazas</p>
+                <p style="font-size: 2em; color: black;"> coloca las pechugas de pollo cocidas en platos individuales o
+                  en un platón para servir. Usa una cuchara y vierte un poco de la salsa sobrecada una de ellas. Vierte
+                  el resto de la salsa en un tazón o en una jarra pequeña de modo de que los invitados puedan servirse.
+                </p>
               </div>
             </div>
           </div>
@@ -203,7 +226,7 @@
           </div>
         </div>
       </article>
-      
+
 
       <article>
         <div class="d-flex flex-column align-items-center mb-5">
@@ -246,15 +269,18 @@
           </div>
         </div>
       </article>
-    
+    </section>
 
     <!-- ----------- PESCADO ------------k -->
 
-   
+    <section *ngIf="isShownFish">
+
       <article>
         <div class="d-flex flex-column align-items-center mb-5">
           <div class="content-recetary">
-            <h2 style="font-size: 3em; margin: 1em 0; color: black;" class="text-center">Pescado con perejil y mantequilla al horno</h2>
+            <h2 style="font-size: 3em; margin: 1em 0; color: black;" class="text-center">Pescado con perejil y
+              mantequilla
+              al horno</h2>
             <div class="d-flex justify-content-center flex-column-reverse flex-lg-row" style="width: 100%;">
               <div class="d-flex flex-column justify-content-center align-items-center px-5 mr-0 mr-lg-4"
                 style=" background-color: #F4F4F4;">
@@ -283,9 +309,14 @@
                   <img src="../../../assets/img/preparacion.png" alt="preparacion icono" style="width:40px;">
                   <h3 style="font-size: 3em; padding:0 5px;">Preparacion</h3>
                 </div>
-                <p style="font-size: 2em; color: black;">Vacía 2 cucharadas de aceite sobre el  papel aluminio o encerado.</p>
-                <p style="font-size: 2em; color: black;">  Coloca encima los trozos de pescado y rocíales un poco de aceite. Espolvorea sal y pimienta.</p>
-                <p style="font-size: 2em; color: black;"> Mezcla el poro, el apio y las zanahorias picadas. Rocía con la mantequilla derretida y un poco más de sal. Cubre con papel aluminio o encerado y hornea por ½ hora a 180° centígrados.</p>
+                <p style="font-size: 2em; color: black;">Vacía 2 cucharadas de aceite sobre el papel aluminio o
+                  encerado.
+                </p>
+                <p style="font-size: 2em; color: black;"> Coloca encima los trozos de pescado y rocíales un poco de
+                  aceite. Espolvorea sal y pimienta.</p>
+                <p style="font-size: 2em; color: black;"> Mezcla el poro, el apio y las zanahorias picadas. Rocía con la
+                  mantequilla derretida y un poco más de sal. Cubre con papel aluminio o encerado y hornea por ½ hora a
+                  180° centígrados.</p>
               </div>
             </div>
           </div>
@@ -328,11 +359,16 @@
                   <img src="../../../assets/img/preparacion.png" alt="preparacion icono" style="width:40px;">
                   <h3 style="font-size: 3em; padding:0 5px;">Preparacion</h3>
                 </div>
-                <p style="font-size: 2em; color: black;">En un recipiente sazona los filetes de pescado con sal y pimienta. Luego lo enharinas y lo fríes en abundante aceite. Resérvalo.</p>
-                <p style="font-size: 2em; color: black;">  Después en una sartén aparte, dora la cebolla en dos cucharadas de aceite. Agrégale comino, vinagre, el ají, los ajos molidos y la salsa roja.</p>
+                <p style="font-size: 2em; color: black;">En un recipiente sazona los filetes de pescado con sal y
+                  pimienta. Luego lo enharinas y lo fríes en abundante aceite. Resérvalo.</p>
+                <p style="font-size: 2em; color: black;"> Después en una sartén aparte, dora la cebolla en dos
+                  cucharadas
+                  de aceite. Agrégale comino, vinagre, el ají, los ajos molidos y la salsa roja.</p>
                 <p style="font-size: 2em; color: black;"> Mezcla la cebolla con el pescado</p>
-                <p style="font-size: 2em; color: black;">Sazónalo y deja que hierva hasta que las cebollas estén cocidas pero no deshechas. Incorpórale el pimiento y cocínalo unos 10 minutos más.</p>
-                <p style="font-size: 2em; color: black;">Acomoda los filetes de pescados en una fuente, cúbrelos con la salsa.Esparce el perejil y el culantro.</p>
+                <p style="font-size: 2em; color: black;">Sazónalo y deja que hierva hasta que las cebollas estén cocidas
+                  pero no deshechas. Incorpórale el pimiento y cocínalo unos 10 minutos más.</p>
+                <p style="font-size: 2em; color: black;">Acomoda los filetes de pescados en una fuente, cúbrelos con la
+                  salsa.Esparce el perejil y el culantro.</p>
               </div>
             </div>
           </div>
@@ -342,7 +378,8 @@
       <article>
         <div class="d-flex flex-column align-items-center mb-5">
           <div class="content-recetary">
-            <h2 style="font-size: 3em; margin: 1em 0; color: black;" class="text-center">Pescado al limón con perejil</h2>
+            <h2 style="font-size: 3em; margin: 1em 0; color: black;" class="text-center">Pescado al limón con perejil
+            </h2>
             <div class="d-flex justify-content-center flex-column-reverse flex-lg-row" style="width: 100%;">
               <div class="d-flex flex-column justify-content-center align-items-center px-5 mr-0 mr-lg-4"
                 style=" background-color: #F4F4F4;">
@@ -370,9 +407,13 @@
                   <h3 style="font-size: 3em; padding:0 5px;">Preparacion</h3>
                 </div>
                 <p style="font-size: 2em; color: black;">Condimenta los pescados por ambos lados con sal y pimienta.</p>
-                <p style="font-size: 2em; color: black;">  Cocina los pescados con aceite y mantequilla. Voltéalos hasta que estén ligeramente dorados.</p>
-                <p style="font-size: 2em; color: black;"> Agrega el jugo de limón y las alcaparras. Cocina por 5 minutos más.</p>
-                <p style="font-size: 2em; color: black;">Retira del fuego y espolvorea el perejil encima antes de servir. 5 Deja reposar de 3 a 5 minutos.</p>
+                <p style="font-size: 2em; color: black;"> Cocina los pescados con aceite y mantequilla. Voltéalos hasta
+                  que estén ligeramente dorados.</p>
+                <p style="font-size: 2em; color: black;"> Agrega el jugo de limón y las alcaparras. Cocina por 5 minutos
+                  más.</p>
+                <p style="font-size: 2em; color: black;">Retira del fuego y espolvorea el perejil encima antes de
+                  servir.
+                  5 Deja reposar de 3 a 5 minutos.</p>
               </div>
             </div>
           </div>
@@ -385,7 +426,7 @@
           <div class="content-recetary">
             <h2 style="font-size: 3em; margin: 1em 0; color: black;" class="text-center">Ceviche de Tilapia</h2>
             <div class="d-flex justify-content-center flex-column-reverse flex-lg-row" style="width: 100%;">
-              <div class="d-flex flex-column justify-content-center align-items-center px-5 mr-0 mr-lg-4"
+              <div class="py-5 d-flex flex-column justify-content-center align-items-center px-5 mr-0 mr-lg-4"
                 style=" background-color: #F4F4F4;">
                 <div class="d-flex mb-3">
                   <img src="../../../assets/img/ingredientes.png" alt="ingredientes icono" style="width:30px;">
@@ -415,8 +456,7 @@
                   <li>Limones</li>
                 </ul>
               </div>
-              <img src="../../../assets/img/cebiche.png" alt="imagen tacos pescado"
-                class="recetary-image mb-4 mb-lg-0">
+              <img src="../../../assets/img/cebiche.png" alt="imagen tacos pescado" class="recetary-image mb-4 mb-lg-0">
             </div>
             <div class="d-flex justify-content-center mt-5">
               <div class="d-flex flex-column justify-content-center px-5 steps">
@@ -426,11 +466,17 @@
                 </div>
                 <p style="font-size: 2em; color: black;">Lava el pescado y ponlo en un tazón
                 </p>
-                <p style="font-size: 2em; color: black;">  Remoja la cebolla en agua helada por 5 minutos. Escurre bien.</p>
+                <p style="font-size: 2em; color: black;"> Remoja la cebolla en agua helada por 5 minutos. Escurre bien.
+                </p>
                 <p style="font-size: 2em; color: black;">Mezcla la cebolla con el pescado.</p>
-                <p style="font-size: 2em; color: black;">En otro tazón, combina ají amarillo en pasta, el jugo de limón, ajo, jengibre y sal. Revuelve bien y agrega unos cubitos de hielo o una cucharada de agua helada. Vierte esto sobre el pescado.</p>
+                <p style="font-size: 2em; color: black;">En otro tazón, combina ají amarillo en pasta, el jugo de limón,
+                  ajo, jengibre y sal. Revuelve bien y agrega unos cubitos de hielo o una cucharada de agua helada.
+                  Vierte
+                  esto sobre el pescado.</p>
                 <p style="font-size: 2em; color: black;"> Deja reposar de 3 a 5 minutos</p>
-                <p style="font-size: 2em; color: black;">Sirve en platos o copas, decora cada una con una hoja de lechuga, laminitas de aguacate, una rodajita de ají amarillo y hojas de cilantro.</p>
+                <p style="font-size: 2em; color: black;">Sirve en platos o copas, decora cada una con una hoja de
+                  lechuga,
+                  laminitas de aguacate, una rodajita de ají amarillo y hojas de cilantro.</p>
               </div>
             </div>
           </div>
@@ -507,7 +553,8 @@
           </div>
         </div>
       </article>
-   
+    </section>
+
 
   </section>
 </section>
